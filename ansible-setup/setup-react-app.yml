@@ -1,0 +1,20 @@
+---
+- name: Setup and Start React App
+  hosts: localhost
+  tasks:
+    - name: Pull Latest Code from Git
+      git:
+        repo: 'https://github.com/manojbusam/site-smith.git' # Replace with your repository URL
+        dest: ../react-app
+        force: yes
+        version: main  # Replace with the appropriate branch name, e.g., main or master
+
+    - name: Install React App Dependencies
+      command: npm install
+      args:
+        chdir: ../react-app
+
+    - name: Start React App
+      command: npm start
+      args:
+        chdir: ../react-app
