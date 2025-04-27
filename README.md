@@ -1,4 +1,3 @@
-```markdown
 # Site Smith Project Setup
 
 ## 1. Configure Git Remote with SSH
