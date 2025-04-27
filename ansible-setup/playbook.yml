@@ -2,19 +2,19 @@
   tasks:
     - name: Pull latest code
       git:
-        repo: git@github.com:manojbusam/site-smith.git
-        dest: ./site-smith
+        repo: git@github.com:manojbusam/site-smith-reactjs.git
+        dest: ./site-smith-reactjs
         version: main
         update: yes
 
     - name: Install React dependencies
       command: npm install
       args:
-        chdir: ./site-smith/react-app
+        chdir: ./site-smith-reactjs/react-app
 
     - name: Start React app
       command: npm start
       args:
-        chdir: ./site-smith/react-app
+        chdir: ./site-smith-reactjs/react-app
       async: 1000
       poll: 0
