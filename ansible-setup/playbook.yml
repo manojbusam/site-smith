@@ -1,0 +1,20 @@
+- hosts: localhost
+  tasks:
+    - name: Pull latest code
+      git:
+        repo: git@github.com:manojbusam/site-smith.git
+        dest: ./site-smith
+        version: main
+        update: yes
+
+    - name: Install React dependencies
+      command: npm install
+      args:
+        chdir: ./site-smith/react-app
+
+    - name: Start React app
+      command: npm start
+      args:
+        chdir: ./site-smith/react-app
+      async: 1000
+      poll: 0
